@@ -1,0 +1,7 @@
+
+
+python -m venv venv
+venv\Scripts\activate
+cd /path/to/mvp_project
+python app.py
+Running on local URL:  http://127.0.0.1:7860

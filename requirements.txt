@@ -1,0 +1,6 @@
+gradio
+pymongo
+transformers
+goose3
+requests
+torch

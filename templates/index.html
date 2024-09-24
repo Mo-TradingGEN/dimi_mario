@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News AI App</title>
+
+    <!-- Custom CSS (Optional) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Logos - TradingGEN.png') }}">
+
+    <!-- Include Vue.js from CDN -->
+    <script src="https://unpkg.com/vue@3.5.8/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1 class="title">{{ message }}</h1>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <input v-model="ticker" class="search-input" placeholder="Enter company ticker">
+            <button @click="searchCompany" class="btn">Search Company</button>
+        </div>
+
+        <!-- Company Information -->
+        <div v-if="companyInfo" class="company-info">
+            <h2>Company Information</h2>
+            <p><strong>Company Name:</strong> {{ companyInfo.company_name }}</p>
+            <p><strong>Symbol:</strong> {{ companyInfo.symbol }}</p>
+            <p><strong>Sector:</strong> {{ companyInfo.sector }}</p>
+            <p><strong>Sub-Industry:</strong> {{ companyInfo.sub_industry }}</p>
+            <p><strong>Headquarters:</strong> {{ companyInfo.headquarters }}</p>
+            <p><strong>Founded:</strong> {{ companyInfo.founded }}</p>
+            <p><strong>Employees:</strong> {{ companyInfo.employees }}</p>
+            <p><strong>Description:</strong> {{ companyInfo.description }}</p>
+        </div>
+
+        <!-- Fetch News, Summarize, and Generate Weekly Summary -->
+        <div v-if="companyInfo" class="actions">
+            <h2>TradingGEN Actions</h2>
+            <button @click="fetchNews" class="btn">Fetch News</button>
+            <button @click="generateSummary" class="btn">Generate Summary</button>
+            <button @click="generateWeeklySummary" class="btn">Generate Weekly Summary</button>
+        </div>
+
+        <!-- Feedback Messages -->
+        <p v-if="newsMessage" :class="{'success-message': newsSuccess, 'error-message': !newsSuccess}">{{ newsMessage }}</p>
+        <p v-if="summaryMessage" :class="{'success-message': summarySuccess, 'error-message': !summarySuccess}">{{ summaryMessage }}</p>
+        <p v-if="weeklySummaryMessage" :class="{'success-message': weeklySummarySuccess, 'error-message': !weeklySummarySuccess}">{{ weeklySummaryMessage }}</p>
+    </div>
+
+    <!-- Vue.js logic, ensure this is loaded after Vue.js -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

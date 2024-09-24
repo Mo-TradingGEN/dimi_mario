@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment directories
+venv/
+env/
+
+# Dependency directories
+node_modules/
+lib/
+lib64/
+
+# Ignore large binaries (if any)
+*.dll
+*.exe
+
+# Flask/Python specific
+instance/
+*.log
+*.db
+*.sqlite3
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
