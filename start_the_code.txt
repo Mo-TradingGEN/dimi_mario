@@ -5,3 +5,17 @@ venv\Scripts\activate
 cd /path/to/mvp_project
 python app.py
 Running on local URL:  http://127.0.0.1:7860
+
+git init
+git remote add origin https://github.com/yourusername/Final_News_AI_MVP.git
+git push -u origin main
+
+
+git add .
+git commit -m "Update message"
+git push
+git push -u origin master
+git add -f app.py static/ templates/
+
+
+New-Item .gitignore

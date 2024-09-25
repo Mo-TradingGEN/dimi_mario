@@ -1,4 +1,3 @@
-gradio
 pymongo
 transformers
 goose3

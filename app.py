@@ -18,7 +18,7 @@ weekly_sum_collection = db['weekly_sum']
 @app.route('/')
 def home():
     companyInfo = {
-        "company_name": "TradingGEN",
+        "company_name": "Test",
         "symbol": "TG",
         "sector": "Financial Services",
         "sub_industry": "Financial Data Providers",
